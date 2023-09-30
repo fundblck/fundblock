@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 
 const Bar = ({ value}) => {
   return (
-    <div className>
+    <div>
       <div className={styles.max}>
         <div
           className={styles.value}

@@ -4,21 +4,18 @@ import { FundBlockContext } from "../../store/fundBlockContext";
 import { useContext } from "react";
 import Modal from "../Modal";
 
-
 const ProjectCard = () => {
-  const { funds, donate, setDonate, setAlert } = useContext(FundBlockContext);
+  const { funds, donate, setDonate, ownerAccount } =
+    useContext(FundBlockContext);
   const { setModal } = useContext(FundBlockContext);
 
   const openModal = () => {
     setModal("scale-100");
   };
 
-  
-
   const resetForm = () => {
     setDonate(0);
-  }
-
+  };
 
   const handleChange = (e) => {
     setDonate(e.target.value);
@@ -29,14 +26,12 @@ const ProjectCard = () => {
     if (!donate) return;
 
     try {
-      resetForm()
-      setAlert('Donating completed...', 'green')
+      resetForm();
     } catch (error) {
-      console.log('Error uploading donating: ', error)
-      setAlert('Donating failed...', 'red')
+      console.log("Error uploading donating: ", error);
     }
 
-    console.log('Form submitted with data:', donate);
+    console.log("Form submitted with data:", donate);
   };
 
   return (
@@ -55,53 +50,62 @@ const ProjectCard = () => {
             </button>
           </div>
         </div>
-        <div className="py-[28px]">
-          <button
-            onClick={openModal}
-            className="px-5 py-2.5 w-full text-neutral-900 text-base sm:text-xl font-semibold bg-gradient-to-r 
+        {!ownerAccount ? (
+          <div className="py-[28px]">
+            <button
+              onClick={openModal}
+              className="px-5 py-2.5 w-full text-neutral-900 text-base sm:text-xl font-semibold bg-gradient-to-r 
         from-emerald-300 to-cyan-300 rounded-lg"
-          >
-            Donate
-          </button>
+            >
+              Donate
+            </button>
 
-          <Modal>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div className="pb-5 appearance-none">
-                <label
-                  className="block text-white 
+            <Modal>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div className="pb-5 appearance-none">
+                  <label
+                    className="block text-white 
                   text-sm pb-2
                   font-semibold leading-snug"
-                  htmlFor="donate"
-                >
-                  Your contribution
-                </label>
-                <input
-                  className="
+                    htmlFor="donate"
+                  >
+                    Your contribution
+                  </label>
+                  <input
+                    className="
                 border rounded w-full py-3 
                 px-3
                  text-gray-700 leading-tight 
                  focus:outline-none focus:shadow-outline"
-                  id="donate"
-                  type="number"
-                  name="donate"
-                  value={donate}
-                  onChange={handleChange}
-                  placeholder="contribution must be valued at 2USD or more"
-                />
-              </div>
-              <button
-              type="submit"
-                className="px-5 py-2.5 w-full text-neutral-900 text-base sm:text-xl font-semibold bg-gradient-to-r 
+                    id="donate"
+                    type="number"
+                    name="donate"
+                    value={donate}
+                    onChange={handleChange}
+                    placeholder="contribution must be valued at 2USD or more"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-5 py-2.5 w-full text-neutral-900 text-base sm:text-xl font-semibold bg-gradient-to-r 
         from-emerald-300 to-cyan-300 rounded-lg"
-              >
-                Donate
-              </button>
-            </form>
-           
-          </Modal>
-         
-          
-        </div>
+                >
+                  Donate
+                </button>
+              </form>
+            </Modal>
+          </div>
+        ) : (
+          <div className="py-[28px]">
+            <button
+              className="px-5 py-2.5 w-full text-neutral-900 text-base sm:text-xl font-semibold bg-gradient-to-r 
+        from-emerald-300 to-cyan-300 rounded-lg"
+            >
+              Withdraw
+            </button>
+
+          </div>
+        )}
 
         <Bar value={funds} />
 

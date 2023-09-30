@@ -55,7 +55,7 @@ const ProjectDetails = () => {
                     <div className='flex flex-col md:flex-col justify-center mr-16'>
                         <Navbar />
                     </div>
-                    <div class="flex flex-col md:flex-col justify-center">
+                    <div className="flex flex-col md:flex-col justify-center">
                         <h1 className="title-font sm:text-2xl text-3xl mb-4 font-medium text-white">
                             ViraSafe
                         </h1>
@@ -68,7 +68,7 @@ const ProjectDetails = () => {
                                 e.preventDefault();
                                 setSelectedTab('overview');
                             }}
-                            class={`sm:px-4 py-3 sm:w-auto justify-center sm:justify-start title-font text-gray-200  inline-flex items-center leading-none ${selectedTab === 'overview' ? `py-3 px-5 font-bold text-white` : 'border-gray-200'
+                            className={`sm:px-4 py-3 sm:w-auto justify-center sm:justify-start title-font text-gray-200  inline-flex items-center leading-none ${selectedTab === 'overview' ? `py-3 px-5 font-bold text-white` : 'border-gray-200'
                                 } tracking-wider`}
                         >
                             Project Overview
@@ -142,11 +142,11 @@ const ProjectDetails = () => {
                     </div>
 
                     {projects.map((project, index) => (
-                        <div key={index} class="w-full mt-2">
+                        <div key={index} className="w-full mt-2">
                             {project}
                         </div>
                     ))}
-                    <div class="flex flex-col md:flex-row justify-center mt-60 ">
+                    <div className="flex flex-col md:flex-row justify-center mt-60 ">
                         <Footer />
                     </div>
                 </section>
@@ -223,7 +223,7 @@ export const Community = () => {
                     </div>
                     <div className='card rounded-lg border-2 border-spacing-2 mx-4'>
                         <div className='pb-5'>
-                        <div class="w-12 h-12 bg-blue-100 rounded-full mx-36 mt-3"></div>
+                        <div className="w-12 h-12 bg-blue-100 rounded-full mx-36 mt-3"></div>
                             <h3 className='text-white font-bold pb-2 mx-20'>Online Health Forums</h3>
                             <p className='text-white mx-2'>
                                 Online health forums or social media groups allows investors to engage

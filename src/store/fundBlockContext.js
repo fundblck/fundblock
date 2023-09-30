@@ -8,21 +8,12 @@ export function FundBlockProvider(props) {
   const [funds, setFunds] = useState(70);
   const [modal, setModal] = useState("scale-0");
   const [donate, setDonate] = useState(0);
+  const [ownerAccount, setOwnerAccount] = useState();
   const [loading] = useState("show: false, msg: ''");
   const [alert] = useState("show: false, msg: '', color: ''");
   
 
-  const setAlert = (msg, color = 'green') => {
-    setLoading('loading', false)
-    setAlert('alert', { show: true, msg, color })
-    setTimeout(() => {
-      setAlert('alert', { show: false, msg: '', color })
-    }, 6000)
-  }
   
-  const setLoading = (msg) => {
-    setLoading('loading', { ...loading, msg })
-  }
   
 
 
@@ -31,10 +22,10 @@ export function FundBlockProvider(props) {
     <div>
       <FundBlockContext.Provider
         value={{
+          ownerAccount,
+          setOwnerAccount,
           loading,
-          setLoading,
           alert,
-          setAlert,
           donate,
           setDonate,
           funds,
