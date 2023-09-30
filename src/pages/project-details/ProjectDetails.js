@@ -5,7 +5,6 @@ import jonathan from '../../assets/jonathan.svg';
 import mark from '../../assets/mark.svg';
 import michelle from '../../assets/michelle.svg';
 import samuel from '../../assets/samuel.svg';
-import incentive from '../../assets/incentive.svg';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 import ProjectCard from '../../components/project-card';
@@ -257,13 +256,9 @@ export const RewardIncentives = () => {
     return (
         <>
             <section className='md:flex md:justify-between md:py-2 h-full mx-auto w-[95%] md:w-full md:h-screen'>
-                <div className='w-full md:w-[40%] md:h-[80vh] h-full mb-5 rounded-lg border'>
-                    <img
-                        src={incentive}
-                        className=' object-contain md:object-cover h-full w-full object-center rounded-lg'
-                        quality={100}
-                        alt='m1'
-                    />
+                <div className='w-full md:w-[40%] md:h-[80vh] h-full'>
+                    
+                    <ProjectCard />
                 </div>
                 <div className='md:w-[55%] w-full text-white'>
                     <h2 className='inter-font text-lg md:text-xl font-bold mb-4'>
@@ -398,13 +393,9 @@ export const ContactInfo = () => {
     return (
         <>
             <section className='contactus py-5 md:h-[80vh] md:flex md:justify-between'>
-                <div className='w-full md:w-[40%] md:h-[80vh] h-full mb-5 rounded-lg border'>
-                    <img
-                        src={incentive}
-                        className=' object-contain md:object-cover h-full w-full object-center rounded-lg'
-                        quality={100}
-                        alt='m1'
-                    />
+                <div className='w-full md:w-[40%] md:h-[80vh] h-full'>
+                   
+                    <ProjectCard/>
                 </div>
 
                 <div className='md:w-1/2'>

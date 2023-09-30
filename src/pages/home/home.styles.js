@@ -24,6 +24,18 @@ export const HomeWrapper = styled.div`
  @media ${device.desktop} {
     max-width: 2500px;
     }
+@media ${device.tablet} {
+      max-width: 768px;
+          }
+@media ${device.mobileL} {
+              max-width: 425px;
+              }
+@media ${device.mobileM} {
+           max-width: 375px;
+                  }
+   @media ${device.mobileS} {
+           max-width: 320px;
+                      }   
     
 `;
 
@@ -73,6 +85,7 @@ justify-content: center;
     color: #fff;
     font-weight: 500;
     line-height:2rem;
+    margin-top: 1rem;
    
  }
 

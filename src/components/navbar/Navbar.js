@@ -5,13 +5,13 @@ import {
     LogoContainer,
     BigLinkContainer,
     NavbarLink,
-    Button,
     ButtonWrapper,
-
+    Button
 } from "./navbar.styles";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import searchicon from "../../assets/searchicon.png";
+
 
 
 
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <ButtonWrapper>
                     <img src={searchicon} alt='searchicon' width='13px' height='13px' />
 
-                    <Button>Connect Wallet</Button>
+                    <Button>Connet Wallet</Button>
 
 
 

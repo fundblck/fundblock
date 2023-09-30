@@ -47,7 +47,7 @@ const ProjectCard = () => {
             <img src={viralIMG} alt="" />
           </div>
           <div className="block ">
-            <h1 className="text-white mb-[12px] text-zinc-100 text-2xl sm:text-4xl font-bold leading-10">
+            <h1 className="text-white-zinc-100 mb-[12px]  text-2xl sm:text-4xl font-bold leading-10">
               ViraSafe
             </h1>
             <button className="rounded-full px-2 sm:px-3  bg-orange-200 text-slate-900">

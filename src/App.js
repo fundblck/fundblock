@@ -16,7 +16,6 @@ import ProjectDetails from "./pages/project-details/ProjectDetails";
 
 function App() {
   return (
-
    
     <BrowserRouter>
     <Routes>
@@ -31,6 +30,7 @@ function App() {
       
     </Routes>
     </BrowserRouter>
+
     
   );
 }
