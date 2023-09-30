@@ -4,13 +4,21 @@ import { FundBlockContext } from "../../store/fundBlockContext";
 import { useContext } from "react";
 import Modal from "../Modal";
 
+
 const ProjectCard = () => {
-  const { funds, donate, setDonate } = useContext(FundBlockContext);
+  const { funds, donate, setDonate, setAlert } = useContext(FundBlockContext);
   const { setModal } = useContext(FundBlockContext);
 
   const openModal = () => {
     setModal("scale-100");
   };
+
+  
+
+  const resetForm = () => {
+    setDonate(0);
+  }
+
 
   const handleChange = (e) => {
     setDonate(e.target.value);
@@ -18,7 +26,16 @@ const ProjectCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform actions with the form data, such as making an API request
+    if (!donate) return;
+
+    try {
+      resetForm()
+      setAlert('Donating completed...', 'green')
+    } catch (error) {
+      console.log('Error uploading donating: ', error)
+      setAlert('Donating failed...', 'red')
+    }
+
     console.log('Form submitted with data:', donate);
   };
 
@@ -80,7 +97,10 @@ const ProjectCard = () => {
                 Donate
               </button>
             </form>
+           
           </Modal>
+         
+          
         </div>
 
         <Bar value={funds} />
